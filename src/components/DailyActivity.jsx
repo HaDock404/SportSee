@@ -5,11 +5,12 @@ const CardDalyGraphic = styled.article`
     width: 100%;
     height: 320px;
     border-radius: 5px;
+    margin-bottom: 30px;
     `
 
-function DailyActivity() {
+function DailyActivity(props) {
     return (
-        <CardDalyGraphic/>
+        <CardDalyGraphic>{props.element}</CardDalyGraphic>
     )
 }
 

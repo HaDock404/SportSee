@@ -7,8 +7,8 @@ const CardMidMark = styled.article`
     border-radius: 5px;
     `
 
-function MidMark() {
-    return <CardMidMark/>
+function MidMark(props) {
+    return <CardMidMark>{props.element}</CardMidMark>
 }
 
 export default MidMark

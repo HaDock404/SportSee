@@ -11,7 +11,7 @@ import './styles/normalize.css';
 import GlobalStyle from './styles/createGlobalStyle.jsx'
 
 import Header from './pages/Header';
-import Home from './pages/Home'
+import Home from './pages/HomeX'
 import Apitest from './components/ApiTest'
 
 
@@ -24,7 +24,7 @@ root.render(
     <Header/>
     <Apitest/>
         <Routes>
-          <Route path="/" element={<><Home/></>}/>
+          <Route path="/:id" element={<><Home/></>}/>
         </Routes>
     <React.StrictMode></React.StrictMode>
   </BrowserRouter>,

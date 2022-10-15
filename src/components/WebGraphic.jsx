@@ -5,10 +5,14 @@ const CardWebGraphic = styled.article`
     height: 268px;
     background-color: #282D30;
     border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     `
 
-function WebGraphic() {
-    return <CardWebGraphic/>
+function WebGraphic(props) {
+    return <CardWebGraphic>{props.element}</CardWebGraphic>
 }
 
 export default WebGraphic

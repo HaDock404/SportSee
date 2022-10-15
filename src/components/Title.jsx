@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import PropTypes from 'prop-types'
 
 const CardLayoutTitle = styled.article`
     display: flex;
@@ -31,5 +32,11 @@ function Title(props) {
         </CardLayoutTitle>
     )
 }
+
+Title.propTypes = {
+    name: PropTypes.string
+  };
+
+  
 
 export default Title
