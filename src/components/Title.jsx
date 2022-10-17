@@ -1,6 +1,15 @@
 import styled from "styled-components"
 import PropTypes from 'prop-types'
 
+/**
+ * It's a function that display the name of the user in the top of the page
+ * 
+ * @prop   {String}  name  name of the user
+ * @prop   {String}  score  motivation phrase for the user
+ *
+ * @return  {React.ReactElement}A React component.
+ */
+
 const CardLayoutTitle = styled.article`
     display: flex;
     flex-direction: column;
@@ -34,9 +43,8 @@ function Title(props) {
 }
 
 Title.propTypes = {
-    name: PropTypes.string
-  };
-
-  
+    name: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+  };  
 
 export default Title

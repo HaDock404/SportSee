@@ -6,9 +6,9 @@
 
 This repo contains all the source code to run the application of the sports analytics dashboard SportSee.
 
-### Prerequisites
+### Prerequisites
 
-\*A text editor like `VSCode, Vim, IntelliJ...` \*Node.js < v.16 \*Git
+*A text editor like `VSCode, Vim, IntelliJ...` *Node.js < v.16 \*Git
 
 ### Project setup
 
@@ -18,21 +18,17 @@ This repo contains all the source code to run the application of the sports anal
 
 \*Package installations after cloning.
 
-`# with NPM
-npm install
+`# with NPM`
+`npm install`
 
-# with Yarn
+`# with Yarn`
 
-yarn`
+`yarn`
 
 \*Start the application
 
-`npm run start
-
-# or
-
-npm start
-
-# with Yarn
-
-yarn start`
+`npm run start`
+`# or`
+`npm start`
+`# with Yarn`
+`yarn start`

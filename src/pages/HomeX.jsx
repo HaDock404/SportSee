@@ -21,6 +21,12 @@ import Meat from '../assets/Meat.svg'
 import Fruit from '../assets/Fruit.svg'
 import cheeseburger from '../assets/cheeseburger.svg'
 
+/**
+ * It's a function that display all the information of the user in the home page
+ *
+ * @return  {React.ReactElement}A React component.
+ */
+
 const CardLayout = styled.section`
     display: flex;
     flex-direction: row;

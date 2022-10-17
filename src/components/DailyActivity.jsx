@@ -1,4 +1,13 @@
 import styled from "styled-components"
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display the time of activity per day in a line chart
+ * 
+ * @prop   {Object}  element  Line chart Daily activity
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 const CardDalyGraphic = styled.article`
     background-color: #FBFBFB;
@@ -13,5 +22,9 @@ function DailyActivity(props) {
         <CardDalyGraphic>{props.element}</CardDalyGraphic>
     )
 }
+
+DailyActivity.propTypes = {
+    element: PropTypes.object.isRequired,
+  };
 
 export default DailyActivity

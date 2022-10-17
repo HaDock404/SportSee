@@ -2,6 +2,12 @@ import styled from "styled-components";
 import Logo from '../assets/logo.svg'
 import Menu from "../components/Menu";
 
+/**
+ * It's a function that display header of the app
+ *
+ * @return  {React.ReactElement}A React component.
+ */
+
 const CardHeader = styled.header`
     background-color: black;
     height: 91px;

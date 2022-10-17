@@ -1,4 +1,14 @@
 import styled from "styled-components"
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display the score of the user with a radial chart
+ * 
+ * @prop   {Object}  element  Radial Chart
+ * @prop   {Number}  score  score of the user
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 const CardScore = styled.article`
     width: 253px;
@@ -16,7 +26,7 @@ const ScoreTitle = styled.h4`
     left: 20px;
     `
 
-const ScoreInfo = styled.h2`
+const ScoreInfo = styled.div`
     font-size: 15px;
     position: absolute;
     font-family: 'Roboto', sans-serif;
@@ -41,9 +51,16 @@ function Score(props) {
         <CardScore>
             <ScoreTitle>Score</ScoreTitle>
             {props.element}
-            <ScoreInfo><ScoreNumb>{props.score}%</ScoreNumb><br></br>de votre <br></br>objectif</ScoreInfo>
+            <ScoreInfo>
+                <ScoreNumb>{props.score}%</ScoreNumb><br></br>de votre <br></br>objectif
+            </ScoreInfo>
         </CardScore>
     )
 }
+
+Score.propTypes = {
+    element: PropTypes.object.isRequired,
+    score: PropTypes.number.isRequired,
+  };
 
 export default Score

@@ -1,4 +1,13 @@
 import styled from "styled-components"
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display the card for the Radar chart
+ * 
+ * @prop   {Object}  element  Radar Chart
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 const CardWebGraphic = styled.article`
     width: 253px;
@@ -14,5 +23,9 @@ const CardWebGraphic = styled.article`
 function WebGraphic(props) {
     return <CardWebGraphic>{props.element}</CardWebGraphic>
 }
+
+WebGraphic.propTypes = {
+    element: PropTypes.object.isRequired,
+  };
 
 export default WebGraphic

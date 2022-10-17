@@ -3,6 +3,15 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { useState } from "react"
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display time of sport of the user during a week
+ * 
+ * @prop   {String}  id  id of the user in the URL
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 function LineGraph(props) {
 
@@ -100,6 +109,10 @@ function LineGraph(props) {
       </ResponsiveContainer>
     );
 }
+
+LineGraph.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 export default LineGraph
   

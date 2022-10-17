@@ -1,6 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+/**
+ * It's a function that display nav bar with different link of the app
+ *
+ * @return  {React.ReactElement}A React component.
+ */
+
 const CardUl = styled.ul`
     width: 100%;
     display: flex;

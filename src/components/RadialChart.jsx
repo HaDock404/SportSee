@@ -1,5 +1,14 @@
 import React, { PureComponent } from 'react';
 import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display the score of the user with a radial chart
+ * 
+ * @prop   {Number}  score  score of the user
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 const data = [
   {
@@ -9,8 +18,6 @@ const data = [
     fill: '#E60000',
   }
 ];
-
-
 
 function RadialGraph(props) {
     return (
@@ -27,6 +34,10 @@ function RadialGraph(props) {
       </ResponsiveContainer>
     );
 }
+
+RadialGraph.propTypes = {
+  score: PropTypes.number.isRequired,
+};
 
 export default RadialGraph
   

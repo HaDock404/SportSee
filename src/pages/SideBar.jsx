@@ -7,6 +7,11 @@ import BodyBuilding from "../assets/BodyBuilding.svg"
 import Swimming from "../assets/Swimming.svg"
 import Yoga from "../assets/Yoga.svg"
 
+/**
+ * It's a function that display the sidebar
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 const CardSideBar = styled.article`
     background-color: black;

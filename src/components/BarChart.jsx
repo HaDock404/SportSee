@@ -2,6 +2,15 @@ import React, { PureComponent } from 'react';
 import { useEffect } from "react"
 import { useState } from "react"
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display the weight of the user with Bar chart during some days
+ * 
+ * @prop   {String}  id  Radial Chart
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 function BarGraph(props) {
 
@@ -124,6 +133,10 @@ function BarGraph(props) {
       </ResponsiveContainer>
     );
 }
+
+BarGraph.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 export default BarGraph
   

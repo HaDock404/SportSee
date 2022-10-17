@@ -3,6 +3,15 @@ import { useParams } from "react-router-dom"
 import { useEffect } from "react"
 import { useState } from "react"
 import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+import PropTypes from "prop-types";
+
+/**
+ * It's a function that display different variable of sport in a Radar chart
+ * 
+ * @prop   {String}  id  id of the user in the URL
+ *
+ * @return  {React.ReactElement}A React component.
+ */
 
 function RadarGraph(props) {
 
@@ -83,5 +92,9 @@ function RadarGraph(props) {
       </ResponsiveContainer>
     );
 }
+
+RadarGraph.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 
 export default RadarGraph
