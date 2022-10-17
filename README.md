@@ -8,27 +8,26 @@ This repo contains all the source code to run the application of the sports anal
 
 ### Prerequisites
 
-*A text editor like `VSCode, Vim, IntelliJ...` *Node.js < v.16 \*Git
+.._ A text editor like `VSCode, Vim, IntelliJ...` .._ Node.js < v.16 ..\* Git
 
 ### Project setup
 
-\*Clone the repo on your computer.
+..\* Clone the repo on your computer.
 
 `git clone https://github.com/HaDock404/SportSee.git`
 
-\*Package installations after cloning.
+..\* Package installations after cloning.
 
-`# with NPM`
+with NPM
 `npm install`
 
-`# with Yarn`
-
+with Yarn
 `yarn`
 
-\*Start the application
+..\* Start the application
 
 `npm run start`
-`# or`
+or
 `npm start`
-`# with Yarn`
+with Yarn
 `yarn start`
