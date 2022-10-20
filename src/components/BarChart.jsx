@@ -3,6 +3,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PropTypes from "prop-types";
+import '../styles/style.css'
 
 /**
  * It's a function that display the weight of the user with Bar chart during some days
@@ -44,38 +45,38 @@ function BarGraph(props) {
      const dataX = [
       {
         name: '1',
-        uv: `${data.data.sessions[0].calories}`,
-        pv: `${data.data.sessions[0].kilogram}`,
+        Calories: `${data.data.sessions[0].calories}`,
+        Poids: `${data.data.sessions[0].kilogram}`,
       },
       {
         name: '2',
-        uv: `${data.data.sessions[1].calories}`,
-        pv: `${data.data.sessions[1].kilogram}`,
+        Calories: `${data.data.sessions[1].calories}`,
+        Poids: `${data.data.sessions[1].kilogram}`,
       },
       {
         name: '3',
-        uv: `${data.data.sessions[2].calories}`,
-        pv: `${data.data.sessions[2].kilogram}`,
+        Calories: `${data.data.sessions[2].calories}`,
+        Poids: `${data.data.sessions[2].kilogram}`,
       },
       {
         name: '4',
-        uv: `${data.data.sessions[3].calories}`,
-        pv: `${data.data.sessions[3].kilogram}`,
+        Calories: `${data.data.sessions[3].calories}`,
+        Poids: `${data.data.sessions[3].kilogram}`,
       },
       {
         name: '5',
-        uv: `${data.data.sessions[4].calories}`,
-        pv: `${data.data.sessions[4].kilogram}`,
+        Calories: `${data.data.sessions[4].calories}`,
+        Poids: `${data.data.sessions[4].kilogram}`,
       },
       {
         name: '6',
-        uv: `${data.data.sessions[5].calories}`,
-        pv: `${data.data.sessions[5].kilogram}`,
+        Calories: `${data.data.sessions[5].calories}`,
+        Poids: `${data.data.sessions[5].kilogram}`,
       },
       {
         name: '7',
-        uv: `${data.data.sessions[6].calories}`,
-        pv: `${data.data.sessions[6].kilogram}`,
+        Calories: `${data.data.sessions[6].calories}`,
+        Poids: `${data.data.sessions[6].kilogram}`,
       }
     ];
 
@@ -102,33 +103,22 @@ function BarGraph(props) {
             interval={"preserveStartEnd"}
             axisLine={false}
             allowDecimals={false}
-            dataKey={"uv"}
+            dataKey={"Calories"}
             />
           <Tooltip 
-            labelStyle={{
-                display: "none",
-              }}
               wrapperStyle={{
-                color: "#FFF",
-                background: "red",
-                border: "none",
-                outline: "none",
-                width: "50px",
-                height: "70px",
-                textAlign: "center",
-                lineHeight: "1.5",
-              }}
-              margin={{ top: 0, left: 0, right: 0, bottom: 0 }}
+                color: "#FFF", backgroundColor: "#FFF"}}
                 />
           <Legend 
             height={40}
             verticalAlign="top"
             align="right"
             iconType={"circle"}
-            style={{ margin: "1rem auto", width: "100px" }}
+            wrapperStyle={{top: 30, right: 100}}
+            formatter={(value, entry, index) => <span className="text-color-class">{value}</span>}
             />
-          <Bar dataKey="pv" fill="#282D30" borderRadius="20 "/>
-          <Bar dataKey="uv" fill="#E60000" />
+          <Bar dataKey="Poids" fill="#282D30" borderRadius="20" barSize={10} radius={[10, 10, 0, 0]} name="Poids (kg)"/>
+          <Bar dataKey="Calories" fill="#E60000" barSize={10} radius={[10, 10, 0, 0]} name="Calories brûlées (kCal)"/>
         </BarChart>
       </ResponsiveContainer>
     );

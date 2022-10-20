@@ -85,8 +85,9 @@ function RadarGraph(props) {
             tickLine={false}
             tickSize={13}
             fontSize={14}
+            radius={10}
             />
-            <PolarRadiusAxis domain={[0, 220]} color="#FF0101"/>
+            <PolarRadiusAxis domain={[0, 220]} stroke="rgb(255, 0, 0, 0.0)"/>
           <Radar dataKey="A" fill="#FF0101" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>

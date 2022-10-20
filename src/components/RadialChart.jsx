@@ -22,13 +22,14 @@ const data = [
 function RadialGraph(props) {
     return (
       <ResponsiveContainer width="100%" height="100%">
-        <RadialBarChart cx="50%" cy="50%" innerRadius="60%" outerRadius="80%" barSize={10} data={data} style={{ background: "transparent" }} startAngle={90}
+        <RadialBarChart cx="50%" cy="50%" innerRadius="90%" outerRadius="80%" barSize={10} data={data} style={{ background: "transparent" }} startAngle={90}
           endAngle={90 + (props.score * 360)}>
           <RadialBar
             minAngle={0}
             background
             clockWise
             dataKey="uv"
+            cornerRadius={40}
           />
         </RadialBarChart>
       </ResponsiveContainer>
