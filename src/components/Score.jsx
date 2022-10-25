@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
  * It's a function that display the score of the user with a radial chart
  * 
  * @prop   {Object}  element  Radial Chart
- * @prop   {Number}  score  score of the user
+ * @prop   {Number}  scoreNumber  score of the user
  *
  * @return  {React.ReactElement}A React component.
  */
@@ -52,7 +52,7 @@ function Score(props) {
             <ScoreTitle>Score</ScoreTitle>
             {props.element}
             <ScoreInfo>
-                <ScoreNumb>{props.score}%</ScoreNumb><br></br>de votre <br></br>objectif
+                <ScoreNumb>{props.scoreNumber}%</ScoreNumb><br></br>de votre <br></br>objectif
             </ScoreInfo>
         </CardScore>
     )
@@ -60,7 +60,7 @@ function Score(props) {
 
 Score.propTypes = {
     element: PropTypes.object.isRequired,
-    score: PropTypes.number.isRequired,
+    scoreNumber: PropTypes.number.isRequired,
   };
 
 export default Score

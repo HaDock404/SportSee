@@ -4,6 +4,10 @@ import { useState } from "react"
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import PropTypes from "prop-types";
 import '../styles/style.css'
+import styled from 'styled-components';
+
+import Activity from './Api/Activity';
+import { dataZ } from './Api/Activity';
 
 /**
  * It's a function that display the weight of the user with Bar chart during some days
@@ -13,79 +17,40 @@ import '../styles/style.css'
  * @return  {React.ReactElement}A React component.
  */
 
+const TooltipCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  background-color: red;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 0;`
+
+ const CustomTooltip = ({payload, active}) => {
+	if (active) {
+		return (
+			<TooltipCard>
+				<p>{`${payload[0].value}kg`}</p>
+				<p>{`${payload[1].value}cal`}</p>
+			</TooltipCard>
+		)
+	}
+	return null
+}
+
 function BarGraph(props) {
 
-  const [data, setData] = useState(null);
-    const [loading,setLoading] = useState(true);
-    const [error, setError] = useState(null)
-
-    useEffect(() => {
-        fetch(`http://localhost:3000/user/${props.id}/activity`)
-             .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
-                throw response;
-             })
-             .then (data => {
-                setData(data);
-             })
-             .catch(error => {
-                console.error("Error", error)
-                setError(error)
-             })
-             .finally(() => {
-                setLoading(false)
-             })
-     }, [])
-
-     if (loading) return "Loading ..."
-     if(error) return "Error!";
-
-     const dataX = [
-      {
-        name: '1',
-        Calories: `${data.data.sessions[0].calories}`,
-        Poids: `${data.data.sessions[0].kilogram}`,
-      },
-      {
-        name: '2',
-        Calories: `${data.data.sessions[1].calories}`,
-        Poids: `${data.data.sessions[1].kilogram}`,
-      },
-      {
-        name: '3',
-        Calories: `${data.data.sessions[2].calories}`,
-        Poids: `${data.data.sessions[2].kilogram}`,
-      },
-      {
-        name: '4',
-        Calories: `${data.data.sessions[3].calories}`,
-        Poids: `${data.data.sessions[3].kilogram}`,
-      },
-      {
-        name: '5',
-        Calories: `${data.data.sessions[4].calories}`,
-        Poids: `${data.data.sessions[4].kilogram}`,
-      },
-      {
-        name: '6',
-        Calories: `${data.data.sessions[5].calories}`,
-        Poids: `${data.data.sessions[5].kilogram}`,
-      },
-      {
-        name: '7',
-        Calories: `${data.data.sessions[6].calories}`,
-        Poids: `${data.data.sessions[6].kilogram}`,
-      }
-    ];
+  Activity()
 
     return (
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
           height={300}
-          data={dataX}
+          data={dataZ}
           margin={{
             top: 0,
             right: 0,
@@ -105,9 +70,12 @@ function BarGraph(props) {
             allowDecimals={false}
             dataKey={"Calories"}
             />
-          <Tooltip 
+          <Tooltip
+              labelFormatter={() => ''}
+              cursor={{fill: '#DFDFDF', opacity: '0.6'}}
+              content={<CustomTooltip/>}
               wrapperStyle={{
-                color: "#FFF", backgroundColor: "#FFF"}}
+                color: "#FFF", backgroundColor: "#FFF", outline: 'none'}}
                 />
           <Legend 
             height={40}

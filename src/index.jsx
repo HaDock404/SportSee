@@ -12,7 +12,6 @@ import GlobalStyle from './styles/createGlobalStyle.jsx'
 
 import Header from './pages/Header';
 import Home from './pages/HomeX'
-import Apitest from './components/ApiTest'
 
 
 
@@ -22,7 +21,6 @@ root.render(
   <BrowserRouter>
     <GlobalStyle/>
     <Header/>
-    <Apitest/>
         <Routes>
           <Route path="/:id" element={<><Home/></>}/>
         </Routes>

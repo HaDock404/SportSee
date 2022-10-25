@@ -21,6 +21,17 @@ import Meat from '../assets/Meat.svg'
 import Fruit from '../assets/Fruit.svg'
 import cheeseburger from '../assets/cheeseburger.svg'
 
+import User from "../components/Api/User"
+import { dataZ } from "../components/Api/User"
+
+import { scoreData } from "../components/Api/User"
+import { firstName } from "../components/Api/User"
+import { calorieCount } from "../components/Api/User"
+import { proteinCount } from "../components/Api/User"
+import { lipidCount } from "../components/Api/User"
+import { carbohydrateCount } from "../components/Api/User"
+
+
 /**
  * It's a function that display all the information of the user in the home page
  *
@@ -68,10 +79,26 @@ const CardlayoutStatBox = styled.section`
     justify-content: space-between;
     `
 
-    
+let testX = 0
+    async function showAvatar() {
+
+        // lire notre JSON
+        let response = await fetch(`http://localhost:3000/user/12`);
+        let user = await response.json();
+
+        //console.log(user.data.todayScore)
+        testX = user.data.todayScore
+
+        //console.log(testX)
+
+      }
+      
+      //showAvatar();
 
 function Home() {
 
+    showAvatar()
+    User()
     const { id } = useParams()
 
     const [data, setData] = useState(null);
@@ -101,43 +128,50 @@ function Home() {
      if (loading) return "Loading ..."
      if(error) return "Error!";
 
-     let score = ""
+     let score = 0
 
-     if(data.data.score == undefined) {
-        score = data.data.todayScore
-     } else if (data.data.todayScore == undefined) {
-        score = data.data.score
-     } else {
-        return "Error!"
-     }
+     score = scoreData
 
+     
+     /*const [test1, test2] = useState(0)
+     let toto = 0
 
+     useEffect( async () => {
+        toto = test2(test1 + score)
+     }, [])
 
+     console.log(toto)
 
+     //console.log(testX)
+
+     //console.log(firstName)
+*/
+     console.log(scoreData)
     return (
         <CardLayout>
             <SideBar/>
             <CardLayoutHomePage>
-                <Title name={data.data.userInfos.firstName} subtitle="Félicitation ! Vous avez explosé vos objectifs hier"/>
+                <Title name={firstName} subtitle="Félicitation ! Vous avez explosé vos objectifs hier"/>
                 <CardLayoutDashboard>
                     <CardLayoutStat>
                         <DailyActivity element={<BarGraph id={id}/>}/>
                         <CardlayoutStatBox>
                             <MidMark element={<LineGraph id={id}/>}/>
                             <WebGraphic element={<RadarGraph id={id}/>}/>
-                            <Score element={<RadialGraph score={score}/>} score={score * 100}/>
+                            <Score element={<RadialGraph score={score}/>} scoreNumber={score * 100}/>
                         </CardlayoutStatBox>
                     </CardLayoutStat>
                     <CardLayoutNutrients>
-                        <CardNutrients img={Fire} style={{backgroundColor: "rgba(255, 0, 0, 0.07)"}} quantity={data.data.keyData.calorieCount} type="Cal" typetext="Calories"/>
-                        <CardNutrients img={Meat} style={{backgroundColor: "rgba(74, 184, 255, 0.1)"}} quantity={data.data.keyData.proteinCount} type="g" typetext="Proteines"/>
-                        <CardNutrients img={Fruit} style={{backgroundColor: "rgba(249, 206, 35, 0.1)"}} quantity={data.data.keyData.carbohydrateCount} type="g" typetext="Glucides"/>
-                        <CardNutrients img={cheeseburger} style={{backgroundColor: "rgba(253, 81, 129, 0.1)"}} quantity={data.data.keyData.lipidCount} type="g" typetext="Lipides"/>
+                        <CardNutrients img={Fire} style={{backgroundColor: "rgba(255, 0, 0, 0.07)"}} quantity={calorieCount} type="Cal" typetext="Calories"/>
+                        <CardNutrients img={Meat} style={{backgroundColor: "rgba(74, 184, 255, 0.1)"}} quantity={proteinCount} type="g" typetext="Proteines"/>
+                        <CardNutrients img={Fruit} style={{backgroundColor: "rgba(249, 206, 35, 0.1)"}} quantity={carbohydrateCount} type="g" typetext="Glucides"/>
+                        <CardNutrients img={cheeseburger} style={{backgroundColor: "rgba(253, 81, 129, 0.1)"}} quantity={lipidCount} type="g" typetext="Lipides"/>
                     </CardLayoutNutrients>
                 </CardLayoutDashboard>
             </CardLayoutHomePage>
         </CardLayout>
     )
+
 }
 
 export default Home
