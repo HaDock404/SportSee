@@ -15,11 +15,23 @@ const CardDalyGraphic = styled.article`
     height: 320px;
     border-radius: 5px;
     margin-bottom: 30px;
+    position: relative;
+    `
+
+const TitleActivity = styled.h2`
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    top: 15px;
+    left: 15px;
     `
 
 function DailyActivity(props) {
     return (
-        <CardDalyGraphic>{props.element}</CardDalyGraphic>
+        <CardDalyGraphic>
+            <TitleActivity>Activité quotidienne</TitleActivity>
+            {props.element}
+        </CardDalyGraphic>
     )
 }
 

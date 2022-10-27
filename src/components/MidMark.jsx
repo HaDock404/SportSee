@@ -14,10 +14,35 @@ const CardMidMark = styled.article`
     height: 268px;
     background-color: #FF0000;
     border-radius: 5px;
+    position: relative;
     `
 
+const WeCard = styled.div`
+    position absolute;
+    right: 0px;
+    width: 75px;
+    border-radius: 0 5px 5px 0;
+    height: 268px;
+    background-color: #cf0202;
+    `
+
+const TitleCard = styled.h2`
+    position: absolute;
+    color: #fa8282;
+    font-family: 'Roboto', sans serif;
+    font-size: 15px;
+    top: 20px;
+    left: 30px;
+    `
+
+
 function MidMark(props) {
-    return <CardMidMark>{props.element}</CardMidMark>
+    return (
+        <CardMidMark>
+            <WeCard />
+            <TitleCard>Durée moyenne des <br></br>sessions</TitleCard>
+            {props.element}
+        </CardMidMark>)
 }
 
 MidMark.propTypes = {

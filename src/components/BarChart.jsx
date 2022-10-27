@@ -59,10 +59,12 @@ function BarGraph(props) {
           }}
           barGap={6}
         >
-          <CartesianGrid  strokeDasharray="2 2" vertical={false} />
+          <CartesianGrid  strokeDasharray="3" vertical={false} />
           <XAxis dataKey="name" 
             domain={["dataMin + 1", "dataMax + 1"]}
             tickLine={false}
+            dy={10}
+					  tickCount='7'
             />
           <YAxis orientation="right"
             interval={"preserveStartEnd"}

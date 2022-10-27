@@ -43,7 +43,7 @@ function LineGraph(props) {
         <ResponsiveContainer margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <LineChart
           data={dataZ}
-          style={{ background: "red", borderRadius: "10px" }}
+          style={{ background: "", borderRadius: "10px" }}
           margin={{ top: 0, right: 0, bottom: 10, left: 0 }}
         >
           <XAxis dataKey="name"
