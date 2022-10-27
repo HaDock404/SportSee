@@ -15,37 +15,65 @@ import PropTypes from "prop-types";
 
 const CardNutrient = styled.article`
     background-color: #FBFBFB;
-    width: 258px;
-    height: 124px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    @media only screen and (min-width: 1400px) {
+        width: 258px;
+        height: 124px;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 170px;
+        height: 75px;
+    }
     `
 
 const Quantity = styled.h3`
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
     color: black;
-    margin-bottom: 10px;
+    @media only screen and (min-width: 1400px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    @media only screen and (max-width: 1399px) {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
     `
 
 const Type = styled.h4`
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
     color: #74798C;
-    margin-top: 0px;`
+    margin-top: 0px;
+    @media only screen and (min-width: 1400px) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: 1399px) {
+        font-size: 10px;
+    }
+    `
 
 const Logo = styled.div`
-    width: 60px;
-    height: 60px;
-    border-radius: 6px;
-    margin-right: 20px;
-    margin-left: 32px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media only screen and (min-width: 1400px) {
+        width: 60px;
+        height: 60px;
+        border-radius: 6px;
+        margin-right: 20px;
+        margin-left: 32px;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        margin-right: 20px;
+        margin-left: 32px;
+    }
     `
 
 const Text = styled.div`
@@ -54,8 +82,15 @@ const Text = styled.div`
     `
 
 const LogoImg = styled.img`
-    width: 20px;
-    height: 20px;
+    @media only screen and (min-width: 1400px) {
+        width: 20px;
+        height: 20px;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 15px;
+        height: 15px;
+    }
+
     `
 
 function CardNutrients(props) {

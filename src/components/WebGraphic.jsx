@@ -10,14 +10,20 @@ import PropTypes from "prop-types";
  */
 
 const CardWebGraphic = styled.article`
-    width: 253px;
-    height: 268px;
     background-color: #282D30;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    @media only screen and (min-width: 1400px) {
+        width: 253px;
+        height: 268px;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 220px;
+        height: 215px;
+    }
     `
 
 function WebGraphic(props) {

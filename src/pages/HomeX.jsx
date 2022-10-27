@@ -52,16 +52,21 @@ const CardLayoutHomePage = styled.section`
 const CardLayoutDashboard = styled.section`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     height: 100%;
+    justify-content: space-between;
     `
 
 const CardLayoutStat = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: flex-start; 
-    width: 66%;
     height: 100%;
+    @media only screen and (min-width: 1400px) {
+        width: 66%;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 75%;
+    }
     `
 
 const CardLayoutNutrients = styled.section`
@@ -69,8 +74,14 @@ const CardLayoutNutrients = styled.section`
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 33%;
-    height: 613px;
+    @media only screen and (min-width: 1400px) {
+        width: 33%;
+        height: 613px;
+    }
+    @media only screen and (max-width: 1399px) {
+        width: 25%;
+        height: 567px;
+    }
     `
 
 const CardlayoutStatBox = styled.section`
@@ -79,26 +90,13 @@ const CardlayoutStatBox = styled.section`
     justify-content: space-between;
     `
 
-let testX = 0
-    async function showAvatar() {
 
-        // lire notre JSON
-        let response = await fetch(`http://localhost:3000/user/12`);
-        let user = await response.json();
-
-        //console.log(user.data.todayScore)
-        testX = user.data.todayScore
-
-        //console.log(testX)
-
-      }
-      
-      //showAvatar();
 
 function Home() {
 
-    showAvatar()
     User()
+
+    //This do nothing just a test
     const { id } = useParams()
 
     const [data, setData] = useState(null);
@@ -128,6 +126,8 @@ function Home() {
      if (loading) return "Loading ..."
      if(error) return "Error!";
 
+     //This do nothing just a test
+
      let score = 0
 
      score = scoreData
@@ -146,7 +146,7 @@ function Home() {
 
      //console.log(firstName)
 */
-     console.log(scoreData)
+
     return (
         <CardLayout>
             <SideBar/>

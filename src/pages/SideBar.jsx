@@ -22,7 +22,13 @@ const CardSideBar = styled.article`
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-right: 109px;
+    @media only screen and (min-width: 1400px) {
+        margin-right: 109px;
+    }
+    @media only screen and (max-width: 1399px) {
+        margin-right: 20px;
+    }
+    
     `
 
 const CardPicture = styled.img`

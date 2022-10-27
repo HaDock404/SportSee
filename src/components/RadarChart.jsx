@@ -29,7 +29,7 @@ function RadarGraph(props) {
             stroke={"#fff"}
             tickLine={false}
             tickSize={13}
-            fontSize={14}
+            fontSize={13}
             radius={10}
             />
             <PolarRadiusAxis domain={[0, 220]} stroke="rgb(255, 0, 0, 0.0)"/>

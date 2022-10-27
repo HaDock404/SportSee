@@ -26,6 +26,14 @@ with NPM
 with Yarn
 `yarn`
 
+- Clone the repo of the Api on your computer.
+
+`git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git`
+
+- Start the Api
+
+`yarn dev`
+
 - Start the application
 
 `npm run start`

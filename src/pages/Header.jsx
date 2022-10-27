@@ -18,7 +18,12 @@ const CardHeader = styled.header`
 
 const CardLogo = styled.img`
     margin-left: 29px;
-    margin-right: 100px;
+    @media only screen and (min-width: 1400px) {
+        margin-right: 100px;
+    }
+    @media only screen and (max-width: 1399px) {
+        margin-right: 0px;
+    }    
     `
 
 const CardNav = styled.nav`
